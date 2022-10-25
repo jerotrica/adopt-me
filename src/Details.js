@@ -4,6 +4,7 @@ import Carousel from "./Carousel";
 class Details extends Component {
   state = { loading: true };
 
+ 
   async componentDidMount() {
     const res = await fetch(
       `https://pets-v2.dev-apis.com/pets?id=${this.props.params.id}`

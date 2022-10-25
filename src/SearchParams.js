@@ -54,7 +54,7 @@ const SearchParams = () => {
               setBreed("");
             }}
           >
-            <option />
+            <option hidden selected />
             {ANIMALS.map((animal) => (
               <option key={animal} value={animal}>
                 {animal}
