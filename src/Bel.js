@@ -41,6 +41,8 @@ const Bel = () => {
       <button ref={el} onClick={handleClick} id="button">
         Tocame
       </button>
+      <hr />
+      <hr />
       <BelAudio />
     </div>
   );
