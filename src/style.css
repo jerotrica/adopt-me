@@ -114,6 +114,12 @@ header > a,
   margin-left: 45px;
 }
 
+.titleCategorie {
+  font-weight: bold;
+  font-size: 30px;
+  color: rgb(116, 24, 190);
+}
+
 .pet h2 {
   white-space: nowrap;
   font-weight: normal;

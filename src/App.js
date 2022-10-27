@@ -5,7 +5,7 @@ import Details from "./Details";
 import ThemeContext from "./ThemeContext";
 import Bel from "./Bel";
 import { StrictMode, useState } from "react";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 const App = () => {
   const theme = useState("pink");
   return (
