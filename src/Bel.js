@@ -1,5 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import BelAudio from "./BelAudio";
+import BelArrayNestedList from "./BelArrayNestedList";
+import BelArrayList from "./BelArrayList";
 
 // usando document
 // usando ref
@@ -43,7 +45,9 @@ const Bel = () => {
       </button>
       <hr />
       <hr />
-      <BelAudio />
+      {/* <BelAudio /> */}
+      {/* <BelArrayList /> */}
+      <BelArrayNestedList />
     </div>
   );
 };
