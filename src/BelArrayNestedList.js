@@ -14,7 +14,7 @@ const initialList = [
   {
     id: 3,
     name: "Sneakers",
-    brands: ["Test", "TEst2"],
+    brands: [],
   },
   {
     id: 4,
@@ -27,10 +27,40 @@ const BelArrayNestedList = () => {
   const [list, setList] = useState(initialList);
   const [item, setItem] = useState("");
   const [categorie, setCategorie] = useState("");
+  const [newCategorie, setNewCategorie] = useState("");
 
   const handleAdd = () => {
-    list[categorie - 1].brands.push(item);
+    var elementPos = list
+      .map(function (x) {
+        return x.id;
+      })
+      .indexOf(+categorie);
+    console.log(elementPos);
+    list[elementPos].brands.push(item);
+    setCategorie("");
+    setItem("");
     //aca no entiendo por que no puedo poner el SETLIST.
+  };
+
+  const handleAddCategorie = () => {
+    if (list.length) {
+      const lastId = list.slice(-1);
+      const newArrayItem = {
+        id: lastId[0].id + 1,
+        name: newCategorie,
+        brands: [],
+      };
+      list.push(newArrayItem);
+      setNewCategorie("");
+    } else {
+      const newArrayItem = {
+        id: 1,
+        name: newCategorie,
+        brands: [],
+      };
+      list.push(newArrayItem);
+      setNewCategorie("");
+    }
   };
 
   const handleRemove = (id) => {
@@ -77,7 +107,7 @@ const BelArrayNestedList = () => {
             >
               <div>
                 <label htmlFor="item">
-                  Add Item to list
+                  Add Brand Avaible
                   <input
                     id="item"
                     value={item}
@@ -91,6 +121,7 @@ const BelArrayNestedList = () => {
                     value={categorie}
                     onChange={(e) => setCategorie(e.target.value)}
                   >
+                    <option hidden selected />
                     {list.length ? (
                       list.map((list) => (
                         <option key={list.id} value={list.id}>
@@ -105,10 +136,25 @@ const BelArrayNestedList = () => {
                 <br />
                 <br />
                 <button className="btn btn-outline-success btn-sm">
-                  Add Item
+                  Add Brand
                 </button>
               </div>
             </form>
+            <br />
+            <h5>Add new Categorie</h5>
+            <input
+              id="newCategorie"
+              value={newCategorie}
+              onChange={(e) => setNewCategorie(e.target.value)}
+            />
+            <br />
+            <br />
+            <button
+              className="btn btn-outline-success btn-sm"
+              onClick={() => handleAddCategorie(newCategorie)}
+            >
+              Add Categorie
+            </button>
           </Col>
         </Row>
       </Container>
