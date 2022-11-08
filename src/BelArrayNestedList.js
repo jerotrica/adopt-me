@@ -77,8 +77,6 @@ const BelArrayNestedList = () => {
               {list.map((item) => (
                 <li key={item.id}>
                   {item.name}
-                  &emsp; id: {item.id}
-                  &emsp;
                   <br />
                   {item.brands ? (
                     <ul>
@@ -87,6 +85,7 @@ const BelArrayNestedList = () => {
                       ))}
                     </ul>
                   ) : null}
+                  <br />
                   <button
                     className="btn btn-outline-danger btn-sm"
                     type="button"
@@ -94,6 +93,7 @@ const BelArrayNestedList = () => {
                   >
                     Remove Item
                   </button>
+                  <br /> <br />
                 </li>
               ))}
             </ul>
