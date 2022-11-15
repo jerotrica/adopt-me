@@ -35,10 +35,10 @@ const BelArrayNestedList = () => {
         return x.id;
       })
       .indexOf(+categorie);
-    console.log(elementPos);
+
     list[elementPos].brands.push(item);
-    setCategorie("");
-    setItem("");
+    const newList = Object.assign([], list);
+    setList(newList);
     //aca no entiendo por que no puedo poner el SETLIST.
   };
 
